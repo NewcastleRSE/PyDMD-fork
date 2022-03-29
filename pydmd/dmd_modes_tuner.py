@@ -8,6 +8,9 @@ from functools import partial
 import numpy as np
 
 
+def slow_modes(dmd):
+    return np.array(abs(np.log(dmd.eigs)/(2*pi)) <= dmd.rho,dtype = bool)
+
 def select_modes(
     dmd,
     criteria,

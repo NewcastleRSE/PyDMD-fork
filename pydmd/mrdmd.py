@@ -396,15 +396,9 @@ class MrDMD(DMDBase):
                 current_dmd.fit(x)
 
                 rho = old_div(float(self.max_cycles), x.shape[1])
-                exponent = 2.0 * np.pi * rho
 
                 # retain slow modes
-                select_modes(
-                    current_dmd,
-                    ModesSelectors.threshold(
-                        np.e ** (-exponent), np.e ** exponent
-                    ),
-                )
+                select_modes(current_dmd, slow_modes)
 
             newX = np.hstack(
                 [
