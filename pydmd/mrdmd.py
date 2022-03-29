@@ -397,6 +397,8 @@ class MrDMD(DMDBase):
 
                 rho = old_div(float(self.max_cycles), x.shape[1])
 
+                current_dmd.rho = rho
+
                 # retain slow modes
                 select_modes(current_dmd, slow_modes)
 
