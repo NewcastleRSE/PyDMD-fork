@@ -14,7 +14,7 @@ from copy import deepcopy
 from scipy.linalg import block_diag
 
 from .dmdbase import DMDBase
-from .dmd_modes_tuner import ModesSelectors, select_modes
+from .dmd_modes_tuner import ModesSelectors, select_modes,slow_modes
 
 
 class BinaryTree:
