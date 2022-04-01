@@ -9,7 +9,9 @@ import numpy as np
 
 
 def slow_modes(dmd):
-    return np.array(abs(np.log(dmd.eigs)/(2*np.pi)) <= dmd.rho,dtype = bool)
+    if not hasattr(dmd,'sub'):
+        dmd.sub = 1
+    return np.array(abs(np.log(dmd.eigs)/(2*np.pi*dmd.sub)) <= dmd.rho,dtype = bool)
 
 def select_modes(
     dmd,
